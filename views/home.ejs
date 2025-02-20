@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Paspor Online - Profil Akun</title>
+        <link href="assets/css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="nav-fixed">
+      <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+          <!-- Sidenav Toggle Button-->
+          <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+          <!-- Navbar Brand-->
+          <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+          <!-- * * * * * * When using an image, we recommend the SVG format.-->
+          <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+          <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="/home">Paspor Online</a>
+          <!-- Navbar Search Input-->
+          <!-- * * Note: * * Visible only on and above the lg breakpoint-->
+          <form class="form-inline me-auto d-none d-lg-block me-3">
+              <div class="input-group input-group-joined input-group-solid">
+                  <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
+                  <div class="input-group-text"><i data-feather="search"></i></div>
+              </div>
+          </form>
+          <!-- Navbar Items-->
+          <ul class="navbar-nav align-items-center ms-auto">
+              <!-- Navbar Search Dropdown-->
+              <!-- User Dropdown-->
+              <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                  <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="assets/img/illustrations/profiles/profile-1.png" /></a>
+                  <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                      <h6 class="dropdown-header d-flex align-items-center">
+                          <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                          <div class="dropdown-user-details">
+                              <div class="dropdown-user-details-name"><%= user.nama_lengkap %></div>
+                              <div class="dropdown-user-details-email"><%= user.email %></div>
+                          </div>
+                      </h6>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/logout">
+                          <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                          Logout
+                      </a>
+                  </div>
+              </li>
+          </ul>
+      </nav>
+      <div id="layoutSidenav">
+          <div id="layoutSidenav_nav">
+              <nav class="sidenav shadow-right sidenav-light">
+                  <div class="sidenav-menu">
+                      <div class="nav accordion" id="accordionSidenav">
+                          <!-- Sidenav Heading (Addons)-->
+                          <div class="sidenav-menu-heading">Menu</div>
+                          <!-- Sidenav Link (Charts)-->
+                          <a class="nav-link" href="/beranda">
+                              <div class="nav-link-icon"><i class="fa-solid fa-house"></i></div>
+                              Beranda
+                          </a>
+                          <!-- Sidenav Link (Tables)-->
+                          <a class="nav-link" href="/riwayat">
+                              <div class="nav-link-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                              Riwayat
+                          </a>
+                          <a class="nav-link active" href="/home">
+                            <div class="nav-link-icon"><i class="fa-solid fa-user"></i></div>
+                            Profil Akun
+                        </a>
+                      </div>
+                  </div>
+                  <!-- Sidenav Footer-->
+                  <div class="sidenav-footer">
+                      <div class="sidenav-footer-content">
+                          <div class="sidenav-footer-subtitle">Logged in as:</div>
+                          <div class="sidenav-footer-title"><%= user.nama_lengkap %></div>
+                      </div>
+                  </div>
+              </nav>
+          </div>
+          <div id="layoutSidenav_content">
+
+            <main>
+              <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+                  <div class="container-xl px-4">
+                      <div class="page-header-content">
+                          <div class="row align-items-center justify-content-between pt-3">
+                              <div class="col-auto mb-3">
+                                  <h1 class="page-header-title">
+                                      <div class="page-header-icon"><i data-feather="user"></i></div>
+                                      Profil - Pengaturan Akun
+                                  </h1>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </header>
+              <!-- Main page content-->
+              <div class="container-xl px-4 mt-4">
+                  <!-- Account page navigation-->
+                  <nav class="nav nav-borders">
+                      <a class="nav-link active ms-0" href="account-profile.html">Profil</a>
+                  </nav>
+                  <hr class="mt-0 mb-4" />
+                  <div class="row">
+                      <div class="col-xl-4">
+                        <!-- Profile picture card-->
+                        <div class="card mb-4 mb-xl-0">
+                          <div class="card-header">Foto Profil</div>
+                          <div class="card-body text-center">
+                          <!-- Profile picture image-->
+                          <% if (user.foto_profil) { %>
+                            <img id="profileImage" class="img-account-profile rounded-circle mb-2" src="/uploads/<%= user.foto_profil %>" alt="Foto Profil" width="300" height="300" />
+                          <% } else { %>
+                            <img id="profileImage" class="img-account-profile rounded-circle mb-2" src="" alt="Foto Profil" width="300" height="300" style="display: none;" />
+                          <% } %>
+                            <!-- Profile picture help block-->
+                            <div class="small font-italic text-muted mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
+                            <!-- Profile picture upload button-->
+                            <input type="file" id="uploadProfileImage" class="form-control mb-2" accept="image/*" />
+                            <button class="btn btn-primary mt-2" type="button" id="uploadButton">Upload</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-8">
+                          <!-- Account details card-->
+                          <div class="card mb-4">
+                              <div class="card-header">Detail Profil Akun</div>
+                              <div class="card-body">
+                                <form id="profileForm" action="/update-profile" method="POST">
+                                  <!-- Form Group (username)-->
+                                  <div class="mb-3">
+                                    <label class="small mb-1" for="inputUsername">Nama Lengkap</label>
+                                    <input class="form-control" id="inputUsername" type="text" name="nama_lengkap" value="<%= user.nama_lengkap %>" />
+                                  </div>
+                                  <!-- jenis kelamin-->
+                                  <div class="mb-3">
+                                    <label class="small mb-1" for="jenis_kelamin">Jenis Kelamin</label>
+                                    <select class="form-select" id="jenis_kelamin" name="jenis_kelamin">
+                                      <option value="PRIA" <%= user.jenis_kelamin === 'PRIA' ? 'selected' : '' %>>PRIA</option>
+                                      <option value="WANITA" <%= user.jenis_kelamin === 'WANITA' ? 'selected' : '' %>>WANITA</option>
+                                    </select>
+                                  </div>
+                                  <!-- Form Row-->
+                                  <div class="row gx-3 mb-3">
+                                    <!-- Form Group (phone number)-->
+                                    <div class="col-md-6">
+                                      <label class="small mb-1" for="inputPhone">No Telp</label>
+                                      <input class="form-control" id="inputPhone" type="tel" name="notelp" value="<%= user.notelp %>" />
+                                    </div>
+                                    <!-- Form Group (birthday)-->
+                                    <div class="col-md-6">
+                                      <label class="small mb-1" for="tgl_lahir">Tanggal Lahir</label>
+                                      <input class="form-control" id="tgl_lahir" type="date" name="tgl_lahir" value="<%= user.tgl_lahir %>" />
+                                    </div>
+                                  </div>
+                                  <!-- email -->
+                                  <div class="mb-3">
+                                    <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                    <input class="form-control" id="inputEmailAddress" type="email" name="email" value="<%= user.email %>" readonly />
+                                  </div>
+                                  <!-- Save changes button-->
+                                  <button class="btn btn-primary" type="submit">Simpan</button>
+                                </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </main>
+
+              <footer class="footer-admin mt-auto footer-light">
+                  <div class="container-xl px-4">
+                      <div class="row">
+                          <div class="col-md-6 small">Copyright &copy; Paspor Online 2025</div>
+                      </div>
+                  </div>
+              </footer>
+          </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script src="assets/js/scripts.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+  <script>
+    // Check if there is an error message from the server
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+
+    if (errorMessage) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Akses Ditolak',
+        text: errorMessage,
+      }).then(() => {
+        window.location.href = '/login';
+      });
+    }
+  </script>
+
+<!-- sweet alert buat notif simpan data -->
+<script>
+  document.getElementById('profileForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    try {
+      const response = await fetch('/update-profile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Profil berhasil diperbarui',
+          text: result.message,
+        }).then(() => {
+          window.location.reload();
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal memperbarui profil',
+          text: result.message,
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Gagal memperbarui profil',
+        text: 'Terjadi kesalahan saat memperbarui profil. Silakan coba lagi.',
+      }).then(() => {
+        window.location.reload();
+      });
+    }
+  });
+</script>
+
+<script>
+  document.getElementById('uploadButton').addEventListener('click', async function() {
+    const fileInput = document.getElementById('uploadProfileImage');
+    const file = fileInput.files[0];
+
+    if (!file) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Anda belum upload file foto',
+        text: 'Silakan pilih file foto untuk diupload.',
+      });
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('profileImage', file);
+
+    try {
+      const response = await fetch('/upload-profile-image', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Foto profil berhasil diupload',
+          text: result.message,
+        }).then(() => {
+          const profileImage = document.getElementById('profileImage');
+          profileImage.src = result.foto_profil;
+          profileImage.style.display = 'block';
+          window.location.reload();
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal mengupload foto profil',
+          text: result.message,
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Gagal mengupload foto profil',
+        text: 'Terjadi kesalahan saat mengupload foto profil. Silakan coba lagi.',
+      });
+    }
+  });
+
+  // Validasi nomor telepon
+  document.getElementById('inputPhone').addEventListener('input', validatePhoneNumber);
+
+  function validatePhoneNumber() {
+    var notelp = document.getElementById('inputPhone').value;
+    if (!/^\d*$/.test(notelp)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Input',
+        text: 'No telp hanya boleh angka',
+      });
+      document.getElementById('inputPhone').value = notelp.replace(/\D/g, '');
+    }
+  }
+
+  // Validasi nama lengkap
+  document.getElementById('inputUsername').addEventListener('input', validateNamaLengkap);
+
+  function validateNamaLengkap() {
+    var namaLengkap = document.getElementById('inputUsername').value;
+    if (!/^[a-zA-Z\s]*$/.test(namaLengkap)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Input',
+        text: 'Nama lengkap hanya boleh huruf',
+      });
+      document.getElementById('inputUsername').value = namaLengkap.replace(/[^a-zA-Z\s]/g, '');
+    }
+  }
+
+</script>
+
+</body>
+</html>

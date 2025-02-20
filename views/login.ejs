@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Paspor Online - Login</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- SweetAlert2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Scaffold
+  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center">
+
+      <a href="/index#hero" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Paspor Online</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/index#hero">Halaman Utama</a></li>
+          <li><a href="/index#services">Layanan</a></li>
+          <li><a href="/index#persyaratan">Persyaratan</a></li>
+          <li><a href="/index#contact">Contact</a></li>
+          <li><a href="/login" class="active">Masuk</a></li>
+          <li><a href="/register">Daftar Akun</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/index">Halaman Utama</a></li>
+            <li class="current">Masuk</li>
+          </ol>
+        </nav>
+        <h1>Masuk</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Login Form Section -->
+      <div class="container">
+        <form id="loginForm" action="/login" method="POST" class="mt-3">
+          <div class="form-group mb-3">
+            <label for="email" class="mb-2">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required />
+          </div>
+          <div class="form-group mb-3">
+            <label for="password" class="mb-2">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required />
+          </div>
+          <p>Belum punya akun? Daftar <a href="/register">disini</a></p>
+          <p><a href="#">Lupa password</a></p>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="/index" class="logo d-flex align-items-center">
+              <span class="sitename">Paspor Online</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Unindra Street</p>
+              <p>Jawa Barat, Depok 16418</p>
+              <p class="mt-3"><strong>No Telp:</strong> <span>+62 888 8282 8282</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Halaman</h4>
+            <ul>
+              <li><a href="/index#hero" class="active">Halaman Utama</a></li>
+              <li><a href="/index#services">Layanan</a></li>
+              <li><a href="/index#persyaratan">Persyaratan</a></li>
+              <li><a href="/index#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Member</h4>
+            <ul>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Daftar Akun</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>Paspor Online</span></strong>. All Rights Reserved
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var formData = new FormData(this);
+      var data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          window.location.href = '/home';
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Gagal',
+            text: result.message,
+          });
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Login Gagal',
+          text: 'Terjadi kesalahan saat login. Silakan coba lagi.',
+        });
+      });
+    });
+
+    // Check if there is an error message from the server
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+
+    if (errorMessage) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Akses Ditolak',
+        text: errorMessage,
+      }).then(() => {
+        window.location.href = '/login';
+      });
+    }
+  </script>
+
+</body>
+
+</html>
